@@ -1,129 +1,106 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
-import Link from "next/link";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export function Contact() {
   return (
-    <section id="contact" className="pt-24 bg-white">
+    <section id="contact" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 mb-24">
+        <div className="flex flex-col lg:flex-row gap-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="lg:w-1/3 space-y-8"
           >
-            <h2 className="text-sm font-bold text-honey uppercase tracking-widest mb-4">Contact Us</h2>
-            <h3 className="text-4xl font-bold text-ginger mb-8">Get in Touch</h3>
-            <p className="text-ginger/60 text-lg mb-10 leading-relaxed max-w-lg">
-              Have questions about our products or want to become a distributor? 
-              Our team is here to help you.
-            </p>
+            <div>
+              <h2 className="text-sm font-bold tracking-widest text-brand-green uppercase mb-4">Contact</h2>
+              <h3 className="text-4xl font-bold text-brand-green mb-6">Get in Touch</h3>
+              <p className="text-foreground/70 leading-relaxed">
+                Have questions about our product or interested in a partnership? Our team is here to help.
+              </p>
+            </div>
 
-            <div className="space-y-8">
-              <div className="flex items-center gap-6">
-                <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center text-ginger">
-                  <Phone size={24} />
+            <div className="space-y-6">
+              <div className="flex items-center space-x-4 group">
+                <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
+                  <Phone size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-ginger/40 font-bold uppercase tracking-widest">Call Us</p>
-                  <p className="text-lg font-bold text-ginger">+233 123 456 789</p>
+                  <p className="text-sm text-foreground/50 uppercase tracking-widest">Call Us</p>
+                  <p className="font-bold text-brand-green">+233 (0) 555 123 456</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6">
-                <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center text-ginger">
-                  <Mail size={24} />
+              
+              <div className="flex items-center space-x-4 group">
+                <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
+                  <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-ginger/40 font-bold uppercase tracking-widest">Email Us</p>
-                  <p className="text-lg font-bold text-ginger">hello@honeyginger.com</p>
+                  <p className="text-sm text-foreground/50 uppercase tracking-widest">Email Us</p>
+                  <p className="font-bold text-brand-green">info@honeyginger.com</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6">
-                <div className="w-14 h-14 bg-muted rounded-2xl flex items-center justify-center text-ginger">
-                  <MapPin size={24} />
+
+              <div className="flex items-center space-x-4 group">
+                <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
+                  <MapPin size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-ginger/40 font-bold uppercase tracking-widest">Visit Us</p>
-                  <p className="text-lg font-bold text-ginger">Accra, Ghana</p>
+                  <p className="text-sm text-foreground/50 uppercase tracking-widest">Visit Us</p>
+                  <p className="font-bold text-brand-green">Accra, Ghana</p>
                 </div>
               </div>
             </div>
-
-            <div className="mt-12 flex gap-4">
-              {[Instagram, Facebook, Twitter, Linkedin].map((Icon, idx) => (
-                <Link
-                  key={idx}
-                  href="#"
-                  className="w-12 h-12 rounded-full border border-ginger/10 flex items-center justify-center text-ginger/60 hover:bg-ginger hover:text-white hover:border-ginger transition-all"
-                >
-                  <Icon size={20} />
-                </Link>
-              ))}
+            
+            <div className="pt-8 p-6 bg-brand-yellow/10 rounded-3xl">
+              <h4 className="font-bold text-brand-green mb-2">Business Hours</h4>
+              <p className="text-sm text-foreground/70">Monday - Friday: 8am - 6pm</p>
+              <p className="text-sm text-foreground/70">Saturday: 9am - 4pm</p>
             </div>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-muted/50 p-10 lg:p-12 rounded-[2.5rem] border border-ginger/5"
+            className="lg:w-2/3"
           >
-            <form className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-ginger/60 ml-1">Full Name</label>
-                  <input
-                    type="text"
-                    placeholder="John Doe"
-                    className="w-full px-6 py-4 bg-white rounded-xl border border-ginger/10 focus:outline-none focus:ring-2 focus:ring-honey/20 focus:border-honey transition-all"
-                  />
+            <div className="bg-white border border-brand-green/10 rounded-[2rem] p-8 md:p-12 shadow-xl shadow-brand-green/5">
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-brand-green">Full Name</label>
+                    <Input placeholder="John Doe" className="bg-brand-green/5 border-none h-12 rounded-xl focus-visible:ring-brand-green" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-brand-green">Email Address</label>
+                    <Input placeholder="john@example.com" type="email" className="bg-brand-green/5 border-none h-12 rounded-xl focus-visible:ring-brand-green" />
+                  </div>
                 </div>
+                
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-ginger/60 ml-1">Email Address</label>
-                  <input
-                    type="email"
-                    placeholder="john@example.com"
-                    className="w-full px-6 py-4 bg-white rounded-xl border border-ginger/10 focus:outline-none focus:ring-2 focus:ring-honey/20 focus:border-honey transition-all"
-                  />
+                  <label className="text-sm font-bold text-brand-green">Subject</label>
+                  <Input placeholder="Wholesale Inquiry" className="bg-brand-green/5 border-none h-12 rounded-xl focus-visible:ring-brand-green" />
                 </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-ginger/60 ml-1">Subject</label>
-                <select className="w-full px-6 py-4 bg-white rounded-xl border border-ginger/10 focus:outline-none focus:ring-2 focus:ring-honey/20 focus:border-honey transition-all appearance-none">
-                  <option>Retail Inquiry</option>
-                  <option>Wholesale/Distributor Inquiry</option>
-                  <option>Customer Support</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-ginger/60 ml-1">Message</label>
-                <textarea
-                  rows={4}
-                  placeholder="How can we help you?"
-                  className="w-full px-6 py-4 bg-white rounded-xl border border-ginger/10 focus:outline-none focus:ring-2 focus:ring-honey/20 focus:border-honey transition-all resize-none"
-                />
-              </div>
-              <button className="w-full py-5 bg-ginger text-white font-bold rounded-xl hover:bg-ginger-light transition-all shadow-xl shadow-ginger/10">
-                Send Message
-              </button>
-            </form>
-          </motion.div>
-        </div>
 
-        {/* Footer */}
-        <div className="py-12 border-t border-ginger/5 flex flex-col md:row items-center justify-between gap-8 text-sm text-ginger/40">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-ginger rounded flex items-center justify-center text-honey font-bold">H</div>
-            <span className="font-serif font-bold text-ginger text-lg">Honey Ginger</span>
-          </div>
-          <p>© 2026 Honey Ginger Drink. All rights reserved.</p>
-          <div className="flex gap-8">
-            <Link href="#" className="hover:text-ginger transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-ginger transition-colors">Terms of Service</Link>
-          </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-brand-green">Message</label>
+                  <Textarea placeholder="How can we help you?" className="bg-brand-green/5 border-none min-h-[150px] rounded-xl focus-visible:ring-brand-green resize-none" />
+                </div>
+
+                <Button className="w-full md:w-auto px-12 py-6 bg-brand-green hover:bg-brand-green/90 text-white rounded-full h-auto text-lg font-bold group">
+                  Send Message <Send className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />
+                </Button>
+              </form>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

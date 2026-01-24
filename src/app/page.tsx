@@ -4,8 +4,9 @@ import { About } from "@/components/About";
 import { Preparation } from "@/components/Preparation";
 import { Benefits } from "@/components/Benefits";
 import { Pricing } from "@/components/Pricing";
-import { Deals } from "@/components/Deals";
+import { Partnership } from "@/components/Partnership";
 import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
       <Preparation />
       <Benefits />
       <Pricing />
-      <Deals />
+      <Partnership />
       <Contact />
+      <Footer />
     </main>
   );
 }

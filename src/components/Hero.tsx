@@ -1,69 +1,63 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
-      {/* Background Gradients */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-honey/5 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-ginger/5 to-transparent pointer-events-none" />
+    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-yellow/5 -skew-x-12 transform origin-top-right -z-10" />
+      <div className="absolute -top-24 -left-24 w-96 h-96 bg-brand-green/5 rounded-full blur-3xl -z-10" />
 
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="z-10"
+          className="space-y-8"
         >
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block px-4 py-1.5 bg-ginger/10 text-ginger rounded-full text-sm font-bold mb-6 tracking-wide uppercase"
-          >
-            Premium Natural Beverage
-          </motion.span>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-6xl md:text-8xl font-bold leading-tight mb-6 text-ginger"
-          >
+          <div className="inline-flex items-center space-x-2 bg-brand-green/10 text-brand-green px-4 py-2 rounded-full text-sm font-semibold tracking-wide">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-green"></span>
+            </span>
+            <span>100% NATURAL INGREDIENTS</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight text-brand-green">
             Natural Energy <br />
-            <span className="text-honey italic">in Every Sip</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-lg text-ginger/70 max-w-lg mb-10 leading-relaxed"
-          >
-            Experience the perfect blend of raw honey and organic ginger. 
-            A traditional recipe refined for the modern lifestyle. 
-            No artificial additives, just pure wellness.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <Link
-              href="#pricing"
-              className="px-10 py-4 bg-ginger text-white rounded-full text-lg font-bold hover:bg-ginger-light transition-all shadow-xl shadow-ginger/20 text-center"
-            >
-              Buy Now
-            </Link>
-            <Link
-              href="#contact"
-              className="px-10 py-4 bg-white border-2 border-ginger/20 text-ginger rounded-full text-lg font-bold hover:border-ginger transition-all text-center"
-            >
+            <span className="text-brand-yellow">In Every Sip</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-foreground/70 max-w-lg leading-relaxed">
+            Experience the perfect blend of raw honey and fresh ginger. A premium beverage crafted for wellness, vitality, and pure refreshment.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button className="bg-brand-green hover:bg-brand-green/90 text-white text-lg px-8 py-6 rounded-full h-auto">
+              Buy Now <ArrowRight className="ml-2" size={20} />
+            </Button>
+            <Button variant="outline" className="border-brand-green text-brand-green hover:bg-brand-green/5 text-lg px-8 py-6 rounded-full h-auto">
               Become a Distributor
-            </Link>
-          </motion.div>
+            </Button>
+          </div>
+
+          <div className="flex items-center space-x-8 pt-8 border-t">
+            <div>
+              <p className="text-2xl font-bold text-brand-green">Premium</p>
+              <p className="text-sm text-foreground/50 uppercase tracking-widest">Quality</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-brand-green">Natural</p>
+              <p className="text-sm text-foreground/50 uppercase tracking-widest">Wellness</p>
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-brand-green">African</p>
+              <p className="text-sm text-foreground/50 uppercase tracking-widest">Heritage</p>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -72,53 +66,24 @@ export function Hero() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative"
         >
-          <div className="relative w-full aspect-square max-w-xl mx-auto">
-            {/* Abstract Decorative Circles */}
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.05, 1],
-                rotate: [0, 5, 0]
-              }}
-              transition={{ duration: 10, repeat: Infinity }}
-              className="absolute -top-10 -right-10 w-64 h-64 bg-honey/10 rounded-full blur-3xl"
+          <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-[4/5]">
+            <img 
+              src="https://images.unsplash.com/photo-1615485240383-ef5c11bc46e3?auto=format&fit=crop&q=80&w=800" 
+              alt="Fresh Ginger and Honey" 
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
-            <motion.div 
-              animate={{ 
-                scale: [1, 1.1, 1],
-                rotate: [0, -5, 0]
-              }}
-              transition={{ duration: 12, repeat: Infinity }}
-              className="absolute -bottom-10 -left-10 w-80 h-80 bg-ginger/10 rounded-full blur-3xl"
-            />
-            
-            <div className="relative z-10 w-full h-full rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1599307767316-776533bb941c?auto=format&fit=crop&q=80&w=1000"
-                alt="Honey dripping into ginger tea"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ginger/20 to-transparent" />
-            </div>
-            
-            {/* Floating Badge */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-2xl z-20 border border-ginger/5"
-            >
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-honey/20 rounded-full flex items-center justify-center">
-                  <span className="text-honey text-2xl font-bold">100%</span>
-                </div>
-                <div>
-                  <p className="font-bold text-ginger">Natural</p>
-                  <p className="text-xs text-ginger/60">Ingredients</p>
-                </div>
-              </div>
-            </motion.div>
           </div>
+          {/* Decorative floating elements */}
+          <motion.div 
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -top-10 -right-10 w-32 h-32 bg-brand-yellow/20 rounded-full blur-2xl -z-10"
+          />
+          <motion.div 
+            animate={{ y: [0, 20, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute -bottom-10 -left-10 w-40 h-40 bg-brand-green/20 rounded-full blur-2xl -z-10"
+          />
         </motion.div>
       </div>
     </section>

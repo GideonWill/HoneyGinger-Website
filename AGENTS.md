@@ -1,30 +1,32 @@
 ## Project Summary
-A modern, premium, and highly attractive beverage brand website for "Honey Ginger Drink". Inspired by the clean, corporate elegance of Diageo.com, the site features a warm honey yellow and fresh ginger green color palette, elegant typography, and smooth animations.
+A premium, modern beverage brand website for "Honey Ginger Drink", a health-focused drink based in Ghana. The website is designed with a clean, corporate elegance inspired by Diageo, using a color palette of honey yellow and fresh ginger green. It features sections for product storytelling, preparation guides, health benefits, pricing tiers, and partnership opportunities.
 
 ## Tech Stack
+- Framework: Next.js 15 (App Router)
 - Language: TypeScript
-- Framework: Next.js (App Router)
-- Styling: Tailwind CSS
-- Animations: Framer Motion
+- Styling: Tailwind CSS 4
 - Icons: Lucide React
-- Typography: Inter (Sans), Cormorant Garamond (Serif)
+- Animations: Framer Motion
+- UI Components: Shadcn UI (Radix based)
 
 ## Architecture
-- `src/app/`: App Router pages and global styles.
-- `src/components/`: Reusable UI components (Navbar, Hero, About, Preparation, Benefits, Pricing, Deals, Contact).
-- `public/`: Static assets.
+- `src/app`: Contains the main page and global layout/styles.
+- `src/components`: Contains modular sections of the website (Hero, About, Preparation, Benefits, Pricing, Partnership, Contact, Navbar, Footer).
+- `src/components/ui`: Contains base UI components like Button, Input, Textarea.
 
 ## User Preferences
-- Primary Colors: Honey Yellow (#E9B124), Ginger Green (#2D5A27).
-- Visual Style: Clean, corporate, premium, natural, mobile-friendly.
+- Clean, corporate elegance (inspired by diageo.com).
+- Primary colors: Honey Yellow (#F4B41A) and Ginger Green (#4A6741).
+- Premium African beverage brand aesthetic.
+- Photorealistic lifestyle imagery.
 
 ## Project Guidelines
-- Use CSS variables for theme colors.
-- Implement smooth scrolling for navigation.
-- Use high-quality lifestyle imagery (natural ingredients, wellness shots).
-- Ensure fast loading and mobile responsiveness.
+- Use `use client` for components with animations or state.
+- Maintain a premium feel with subtle animations and hover effects.
+- Ensure mobile responsiveness for all sections.
+- Use CSS variables for brand colors in `globals.css`.
 
 ## Common Patterns
-- Sticky navigation with glassmorphism.
-- Framer Motion `whileInView` animations for scroll-triggered effects.
-- Grid-based layouts for benefits and pricing sections.
+- Framer Motion `motion.div` for entry animations.
+- `whileInView` for scroll-triggered reveals.
+- Grid layouts for benefits and pricing cards.

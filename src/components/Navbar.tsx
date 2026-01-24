@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -28,21 +29,17 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="w-10 h-10 bg-ginger flex items-center justify-center rounded-lg"
-          >
-            <span className="text-honey font-bold text-xl">H</span>
-          </motion.div>
-          <span className="text-xl font-serif font-bold tracking-tight text-ginger">
-            Honey Ginger <span className="text-honey">Drink</span>
+          <div className="w-10 h-10 bg-brand-green rounded-full flex items-center justify-center">
+            <span className="text-brand-yellow font-bold text-xl">H</span>
+          </div>
+          <span className="text-xl font-bold tracking-tight text-brand-green">
+            HONEY <span className="text-brand-yellow">GINGER</span>
           </span>
         </Link>
 
@@ -52,26 +49,25 @@ export function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-ginger/80 hover:text-ginger transition-colors"
+              className="text-sm font-medium text-foreground/80 hover:text-brand-green transition-colors"
             >
               {link.name}
             </Link>
           ))}
-          <Link
-            href="#pricing"
-            className="px-6 py-2 bg-ginger text-white rounded-full text-sm font-semibold hover:bg-ginger-light transition-all shadow-lg shadow-ginger/10"
-          >
+          <Button className="bg-brand-green hover:bg-brand-green/90 text-white rounded-full px-6">
             Buy Now
-          </Link>
+          </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-ginger p-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-foreground p-2"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -81,26 +77,22 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-border overflow-hidden"
+            className="md:hidden bg-white border-t"
           >
-            <div className="flex flex-col p-6 space-y-4">
+            <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-ginger"
+                  className="text-lg font-medium text-foreground hover:text-brand-green"
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link
-                href="#pricing"
-                onClick={() => setIsOpen(false)}
-                className="w-full py-3 bg-ginger text-white text-center rounded-lg font-semibold"
-              >
+              <Button className="bg-brand-green hover:bg-brand-green/90 text-white w-full">
                 Buy Now
-              </Link>
+              </Button>
             </div>
           </motion.div>
         )}
