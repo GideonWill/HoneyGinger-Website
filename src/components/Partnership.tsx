@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Handshake, TrendingUp, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const features = [
   {
@@ -36,7 +37,7 @@ export function Partnership() {
             <p className="text-white/70 text-lg leading-relaxed">
               We are looking for passionate distributors and retailers to join our mission of bringing natural wellness to every home. Join our network today and benefit from a premium brand that customers love.
             </p>
-            
+
             <div className="space-y-6 pt-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -50,16 +51,16 @@ export function Partnership() {
             </div>
 
             <div className="pt-8">
-              <Button className="bg-brand-yellow hover:bg-white text-brand-green font-bold text-lg px-10 py-6 rounded-full h-auto transition-colors">
-                Apply as a Distributor
+              <Button asChild className="bg-brand-yellow hover:bg-white text-brand-green font-bold text-lg px-10 py-6 rounded-full h-auto transition-colors">
+                <Link href="/contact">Apply as a Distributor</Link>
               </Button>
             </div>
           </div>
-          
+
           <div className="lg:w-1/2 relative min-h-[400px]">
-            <img 
-              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=800" 
-              alt="Business Partners" 
+            <img
+              src="/images/joy/13.jpeg"
+              alt="Business Partners"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-brand-green/20 mix-blend-multiply" />

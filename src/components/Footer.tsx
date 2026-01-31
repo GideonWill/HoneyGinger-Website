@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
 
 export function Footer() {
   return (
@@ -8,27 +9,30 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand Info */}
           <div className="space-y-6">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-brand-yellow rounded-full flex items-center justify-center">
-                <span className="text-brand-green font-bold text-xl">H</span>
+            <Link href="/" className="flex items-center gap-4">
+              <img
+                src="/images/joy/logo.jpeg"
+                alt="Joy4Fame Logo"
+                className="h-16 w-auto object-contain"
+              />
+              <div className="flex flex-col -space-y-1">
+                <span className="text-xl font-serif italic font-bold">
+                  <span className="text-white">Honey</span>{" "}
+                  <span className="text-brand-yellow">Ginger</span>
+                </span>
+                <span className="text-sm font-semibold text-white tracking-wide">Tea</span>
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">
-                HONEY <span className="text-brand-yellow">GINGER</span>
-              </span>
             </Link>
             <p className="text-white/70 leading-relaxed">
-              Premium natural energy drink crafted with the finest honey and fresh ginger. 
+              Premium natural energy drink crafted with the finest honey and fresh ginger.
               Taste the tradition of wellness in every sip.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="hover:text-brand-yellow transition-colors">
+              <Link href="https://www.facebook.com/Joy4fame-Instant-Honey-Ginger-Drink" target="_blank" rel="noopener noreferrer" className="hover:text-brand-yellow transition-colors">
                 <Facebook size={20} />
               </Link>
-              <Link href="#" className="hover:text-brand-yellow transition-colors">
-                <Instagram size={20} />
-              </Link>
-              <Link href="#" className="hover:text-brand-yellow transition-colors">
-                <Twitter size={20} />
+              <Link href="https://www.tiktok.com/@joy4fame" target="_blank" rel="noopener noreferrer" className="hover:text-brand-yellow transition-colors">
+                <FaTiktok size={20} />
               </Link>
             </div>
           </div>
@@ -37,22 +41,19 @@ export function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 text-brand-yellow">Quick Links</h4>
             <ul className="space-y-4 text-white/70">
-              <li><Link href="#home" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="#about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#benefits" className="hover:text-white transition-colors">Health Benefits</Link></li>
-              <li><Link href="#pricing" className="hover:text-white transition-colors">Pricing</Link></li>
-              <li><Link href="#contact" className="hover:text-white transition-colors">Become a Partner</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+              <li><Link href="/benefits" className="hover:text-white transition-colors">Health Benefits</Link></li>
+              <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Business */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-brand-yellow">Support</h4>
+            <h4 className="text-lg font-bold mb-6 text-brand-yellow">Company</h4>
             <ul className="space-y-4 text-white/70">
-              <li><Link href="#" className="hover:text-white transition-colors">FAQs</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Shipping Policy</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/preparation" className="hover:text-white transition-colors">Perfect Preparation</Link></li>
             </ul>
           </div>
 
@@ -62,22 +63,22 @@ export function Footer() {
             <ul className="space-y-4 text-white/70">
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="text-brand-yellow shrink-0" />
-                <span>Accra, Ghana</span>
+                <span>Anyaa NIC Off Ablekuma road</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="text-brand-yellow shrink-0" />
-                <span>+233 (0) 555 123 456</span>
+                <a href="https://wa.me/233248511323" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">0248511323 (WhatsApp)</a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="text-brand-yellow shrink-0" />
-                <span>info@honeyginger.com</span>
+                <a href="mailto:Joy4fame2020@gmail.com" className="hover:text-white transition-colors text-sm">Joy4fame2020@gmail.com</a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 mt-16 pt-8 text-center text-white/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Honey Ginger Drink. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Honey Ginger Tea. All rights reserved.</p>
         </div>
       </div>
     </footer>

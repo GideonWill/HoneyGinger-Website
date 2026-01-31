@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const tiers = [
   {
@@ -38,58 +39,75 @@ export function Pricing() {
           <p className="text-foreground/60 mt-4">Whether you're starting your wellness journey or stocking up, we have the right deal for you.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {tiers.map((tier, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className={`relative bg-white rounded-3xl p-8 border shadow-sm flex flex-col ${
-                tier.highlight ? "border-brand-yellow ring-4 ring-brand-yellow/10" : "border-brand-green/10"
-              }`}
-            >
-              {tier.highlight && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-yellow text-brand-green font-bold text-xs uppercase tracking-widest px-4 py-1 rounded-full">
-                  Most Popular
-                </div>
-              )}
-              
-              <div className="mb-8">
-                <h4 className="text-xl font-bold text-brand-green mb-2">{tier.name}</h4>
-                <div className="flex items-baseline space-x-1">
-                  <span className="text-4xl font-bold text-brand-green">GHS {tier.price}</span>
-                </div>
-                <p className="text-foreground/50 text-sm mt-1">{tier.unit}</p>
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="lg:w-1/3 hidden lg:block"
+          >
+            <div className="bg-white rounded-[3rem] p-8 shadow-2xl border border-brand-green/5">
+              <img
+                src="/images/joy/12.png"
+                alt="Honey Ginger Bulk Pack"
+                className="w-full h-auto object-contain hover:scale-110 transition-transform duration-700"
+              />
+              <div className="mt-8 text-center">
+                <p className="text-xl font-bold text-brand-green">Wholesale Ready</p>
+                <p className="text-foreground/50 text-sm">Best value for massive savings</p>
               </div>
+            </div>
+          </motion.div>
 
-              <ul className="space-y-4 mb-10 flex-grow">
-                {tier.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center space-x-3 text-foreground/70">
-                    <div className="bg-brand-green/10 p-1 rounded-full">
-                      <Check className="text-brand-green" size={14} />
-                    </div>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button 
-                className={`w-full py-6 rounded-xl font-bold transition-all ${
-                  tier.highlight 
-                    ? "bg-brand-yellow hover:bg-brand-yellow/90 text-brand-green" 
-                    : "bg-brand-green hover:bg-brand-green/90 text-white"
-                }`}
+          <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+            {tiers.map((tier, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`relative bg-white rounded-3xl p-8 border shadow-sm flex flex-col ${tier.highlight ? "border-brand-yellow ring-4 ring-brand-yellow/10" : "border-brand-green/10"
+                  }`}
               >
-                Order Now
-              </Button>
-            </motion.div>
-          ))}
-        </div>
-        
-        <div className="mt-12 text-center">
-          <p className="text-foreground/50">Wholesale price for distributors: <span className="text-brand-green font-bold">GHS 50 per sachet</span></p>
+                {tier.highlight && (
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-yellow text-brand-green font-bold text-xs uppercase tracking-widest px-4 py-1 rounded-full">
+                    Most Popular
+                  </div>
+                )}
+
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-brand-green mb-2">{tier.name}</h4>
+                  <div className="flex items-baseline space-x-1">
+                    <span className="text-4xl font-bold text-brand-green">GHS {tier.price}</span>
+                  </div>
+                  <p className="text-foreground/50 text-sm mt-1">{tier.unit}</p>
+                </div>
+
+                <ul className="space-y-4 mb-10 flex-grow">
+                  {tier.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center space-x-3 text-foreground/70">
+                      <div className="bg-brand-green/10 p-1 rounded-full">
+                        <Check className="text-brand-green" size={14} />
+                      </div>
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  asChild
+                  className={`w-full py-6 rounded-xl font-bold transition-all ${tier.highlight
+                    ? "bg-brand-yellow hover:bg-brand-yellow/90 text-brand-green"
+                    : "bg-brand-green hover:bg-brand-green/90 text-white"
+                    }`}
+                >
+                  <Link href="/contact">Order Now</Link>
+                </Button>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

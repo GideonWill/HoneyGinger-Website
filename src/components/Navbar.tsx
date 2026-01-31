@@ -42,13 +42,19 @@ export function Navbar() {
         }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="w-10 h-10 bg-brand-green rounded-full flex items-center justify-center">
-            <span className="text-brand-yellow font-bold text-xl">H</span>
+        <Link href="/" className="flex items-center gap-4">
+          <img
+            src="/images/joy/logo.jpeg"
+            alt="Joy4Fame Logo"
+            className="h-14 w-auto object-contain"
+          />
+          <div className="flex flex-col -space-y-1">
+            <span className="text-lg font-serif italic font-bold">
+              <span className="text-brand-green">Honey</span>{" "}
+              <span className="text-brand-yellow">Ginger</span>
+            </span>
+            <span className="text-xs font-semibold text-brand-green tracking-wide">Tea</span>
           </div>
-          <span className="text-xl font-bold tracking-tight text-brand-green">
-            HONEY <span className="text-brand-yellow">GINGER</span>
-          </span>
         </Link>
 
         {/* Desktop Links */}

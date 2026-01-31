@@ -1,104 +1,164 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
+import { FaTiktok } from "react-icons/fa";
 
 export function Contact() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const name = formData.get('name');
+    const message = formData.get('message');
+    const whatsappMessage = encodeURIComponent(`Hello, I'm ${name}. ${message}`);
+    window.open(`https://wa.me/233248511323?text=${whatsappMessage}`, '_blank');
+  };
+
   return (
     <section id="contact" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:w-1/3 space-y-8"
+            className="lg:w-1/2 space-y-12"
           >
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand-green uppercase mb-4">Contact</h2>
-              <h3 className="text-4xl font-bold text-brand-green mb-6">Get in Touch</h3>
-              <p className="text-foreground/70 leading-relaxed">
-                Have questions about our product or interested in a partnership? Our team is here to help.
+              <h2 className="text-sm font-bold tracking-widest text-brand-green uppercase mb-4">Contact Us</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-brand-green mb-6">Let's Start a <br /><span className="text-brand-yellow">Conversation</span></h3>
+              <p className="text-lg text-foreground/70 leading-relaxed">
+                Have questions about our products or interested in becoming a distributor? We're here to help you naturally.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4 group">
-                <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
-                  <Phone size={20} />
+            <div className="space-y-8">
+              <div className="flex items-start space-x-6 group">
+                <div className="w-12 h-12 bg-brand-green/10 rounded-2xl flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                  <Phone size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-foreground/50 uppercase tracking-widest">Call Us</p>
-                  <p className="font-bold text-brand-green">+233 (0) 555 123 456</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-4 group">
-                <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <p className="text-sm text-foreground/50 uppercase tracking-widest">Email Us</p>
-                  <p className="font-bold text-brand-green">info@honeyginger.com</p>
+                  <h4 className="text-lg font-bold text-brand-green mb-1">Phone & WhatsApp</h4>
+                  <div className="flex flex-col space-y-1">
+                    <a href="https://wa.me/233248511323" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-brand-green transition-colors font-medium">0248511323 (WhatsApp)</a>
+                    <a href="https://wa.me/233207896977" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-brand-green transition-colors font-medium">0207896977 (WhatsApp)</a>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-4 group">
-                <div className="w-12 h-12 bg-brand-green/10 rounded-full flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-colors duration-300">
-                  <MapPin size={20} />
+              <div className="flex items-start space-x-6 group">
+                <div className="w-12 h-12 bg-brand-green/10 rounded-2xl flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                  <Mail size={24} />
                 </div>
                 <div>
-                  <p className="text-sm text-foreground/50 uppercase tracking-widest">Visit Us</p>
-                  <p className="font-bold text-brand-green">Accra, Ghana</p>
+                  <h4 className="text-lg font-bold text-brand-green mb-1">Email Address</h4>
+                  <a href="mailto:Joy4fame2020@gmail.com" className="text-foreground/70 hover:text-brand-green transition-colors font-medium">Joy4fame2020@gmail.com</a>
+                </div>
+              </div>
+
+              <div className="flex items-start space-x-6 group">
+                <div className="w-12 h-12 bg-brand-green/10 rounded-2xl flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-brand-green mb-1">Business Location</h4>
+                  <p className="text-foreground/70 font-medium">Anyaa NIC Off Ablekuma road</p>
                 </div>
               </div>
             </div>
-            
-            <div className="pt-8 p-6 bg-brand-yellow/10 rounded-3xl">
-              <h4 className="font-bold text-brand-green mb-2">Business Hours</h4>
-              <p className="text-sm text-foreground/70">Monday - Friday: 8am - 6pm</p>
-              <p className="text-sm text-foreground/70">Saturday: 9am - 4pm</p>
+
+            <div className="pt-8 border-t">
+              <h4 className="text-sm font-bold text-brand-green uppercase tracking-widest mb-6">Follow Our Journey</h4>
+              <div className="flex space-x-4">
+                <Link href="https://www.facebook.com/Joy4fame-Instant-Honey-Ginger-Drink" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-brand-green/5 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-all duration-300">
+                  <Facebook size={20} />
+                </Link>
+                <Link href="https://www.tiktok.com/@joy4fame" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-brand-green/5 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-all duration-300">
+                  <FaTiktok size={20} />
+                </Link>
+              </div>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:w-2/3"
+            className="lg:w-1/2"
           >
-            <div className="bg-white border border-brand-green/10 rounded-[2rem] p-8 md:p-12 shadow-xl shadow-brand-green/5">
-              <form className="space-y-6">
+            <div className="bg-brand-green/5 p-8 md:p-12 rounded-[2.5rem] border border-brand-green/10 shadow-sm">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-brand-green">Full Name</label>
-                    <Input placeholder="John Doe" className="bg-brand-green/5 border-none h-12 rounded-xl focus-visible:ring-brand-green" />
+                    <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Full Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      required
+                      placeholder="John Doe"
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-brand-green">Email Address</label>
-                    <Input placeholder="john@example.com" type="email" className="bg-brand-green/5 border-none h-12 rounded-xl focus-visible:ring-brand-green" />
+                    <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      placeholder="john@example.com"
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all"
+                    />
                   </div>
                 </div>
-                
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-brand-green">Subject</label>
-                  <Input placeholder="Wholesale Inquiry" className="bg-brand-green/5 border-none h-12 rounded-xl focus-visible:ring-brand-green" />
+                  <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Subject</label>
+                  <select className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all appearance-none cursor-pointer">
+                    <option>General Inquiry</option>
+                    <option>Become a Distributor</option>
+                    <option>Bulk Order</option>
+                    <option>Product Feedback</option>
+                  </select>
                 </div>
-
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-brand-green">Message</label>
-                  <Textarea placeholder="How can we help you?" className="bg-brand-green/5 border-none min-h-[150px] rounded-xl focus-visible:ring-brand-green resize-none" />
+                  <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Message</label>
+                  <textarea
+                    rows={5}
+                    name="message"
+                    required
+                    placeholder="How can we help you today?"
+                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all resize-none"
+                  ></textarea>
                 </div>
-
-                <Button className="w-full md:w-auto px-12 py-6 bg-brand-green hover:bg-brand-green/90 text-white rounded-full h-auto text-lg font-bold group">
-                  Send Message <Send className="ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" size={18} />
+                <Button type="submit" className="w-full bg-brand-green hover:bg-brand-green/90 text-white py-6 rounded-2xl text-lg font-bold shadow-lg shadow-brand-green/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                  Send Message via WhatsApp
                 </Button>
               </form>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Visual Banner */}
+        <div className="container mx-auto px-6 mt-24">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative rounded-[3rem] overflow-hidden h-[400px]"
+          >
+            <img
+              src="/images/joy/15.jpeg"
+              alt="Honey Ginger Premium Products"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-green/90 to-brand-green/40 flex items-center">
+              <div className="container mx-auto px-12">
+                <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Join the Wellness Movement</h3>
+                <p className="text-white/90 text-xl max-w-2xl">Thousands of satisfied customers trust our premium Honey Ginger for their daily energy boost</p>
+              </div>
             </div>
           </motion.div>
         </div>
