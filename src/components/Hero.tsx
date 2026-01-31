@@ -40,8 +40,8 @@ export function Hero() {
                 </Link>
               </Button>
               <Button asChild variant="outline" className="border-brand-green text-brand-green hover:bg-brand-green/5 text-lg px-8 py-6 rounded-full h-auto w-full sm:w-auto">
-                <Link href="/contact">
-                  Become a Distributor
+                <Link href="/pricing">
+                  Price Packages
                 </Link>
               </Button>
             </div>
