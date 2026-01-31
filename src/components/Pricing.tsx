@@ -9,7 +9,7 @@ const tiers = [
   {
     name: "Retail",
     price: "60",
-    unit: "per sachet",
+    unit: "for 20 sachets",
     features: ["Single sachet purchase", "Natural ingredients", "Immediate energy", "Perfect for trial"],
     highlight: false,
   },
