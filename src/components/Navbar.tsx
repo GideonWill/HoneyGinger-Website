@@ -2,22 +2,24 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Preparation", href: "#preparation" },
-  { name: "Benefits", href: "#benefits" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Preparation", href: "/preparation" },
+  { name: "Benefits", href: "/benefits" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,11 +29,17 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isActive = (path: string) => {
+    if (!pathname) return false;
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
+
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
@@ -45,17 +53,32 @@ export function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-brand-green transition-colors"
-            >
-              {link.name}
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`text-sm font-medium transition-colors relative py-1 ${active
+                  ? "text-brand-green font-bold"
+                  : "text-foreground/80 hover:text-brand-green"
+                  }`}
+              >
+                {link.name}
+                {active && (
+                  <motion.div
+                    layoutId="navbar-underline"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-green rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+          <Button asChild className="bg-brand-green hover:bg-brand-green/90 text-white rounded-full px-6 ml-4">
+            <Link href="/contact">
+              Buy Now
             </Link>
-          ))}
-          <Button className="bg-brand-green hover:bg-brand-green/90 text-white rounded-full px-6">
-            Buy Now
           </Button>
         </div>
 
@@ -79,20 +102,38 @@ export function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t"
           >
-            <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-foreground hover:text-brand-green"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Button className="bg-brand-green hover:bg-brand-green/90 text-white w-full">
-                Buy Now
-              </Button>
+            <div className="container mx-auto px-6 py-8 flex flex-col space-y-4">
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`text-xl font-bold transition-all relative py-3 px-4 rounded-2xl ${active
+                      ? "text-brand-green bg-brand-green/5"
+                      : "text-foreground/70 hover:text-brand-green hover:bg-brand-green/5"
+                      }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      {link.name}
+                      {active && (
+                        <motion.div
+                          layoutId="mobile-active-dot"
+                          className="w-2 h-2 bg-brand-green rounded-full"
+                        />
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
+              <div className="pt-6">
+                <Button asChild className="bg-brand-green hover:bg-brand-green/90 text-white w-full py-7 text-xl rounded-full shadow-lg shadow-brand-green/20">
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
+                    Buy Now
+                  </Link>
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
