@@ -20,7 +20,7 @@ export function Footer() {
                   <span className="text-white">Honey</span>{" "}
                   <span className="text-brand-yellow">Ginger</span>
                 </span>
-                <span className="text-sm font-semibold text-white tracking-wide">Tea</span>
+                <span className="text-sm font-semibold text-white tracking-wide">Drink</span>
               </div>
             </Link>
             <p className="text-white/70 leading-relaxed">
@@ -78,7 +78,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-16 pt-8 text-center text-white/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Honey Ginger Tea. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Honey Ginger Drink. All rights reserved.</p>
         </div>
       </div>
     </footer>

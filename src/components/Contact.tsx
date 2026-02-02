@@ -141,6 +141,18 @@ export function Contact() {
           </motion.div>
         </div>
 
+        {/* Map Section */}
+        <div className="mt-24 rounded-[3rem] overflow-hidden border border-brand-green/10 shadow-sm h-[400px]">
+          <iframe
+            width="100%"
+            height="100%"
+            title="Business Location"
+            src="https://maps.google.com/maps?q=JP84%2B66X%20Ablekuma%20Fan-Milk&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            className="w-full h-full grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+            loading="lazy"
+          ></iframe>
+        </div>
+
         {/* Visual Banner */}
         <div className="container mx-auto px-6 mt-24">
           <motion.div

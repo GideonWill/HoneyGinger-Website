@@ -53,7 +53,7 @@ export function Navbar() {
               <span className="text-brand-green">Honey</span>{" "}
               <span className="text-brand-yellow">Ginger</span>
             </span>
-            <span className="text-xs font-semibold text-brand-green tracking-wide">Tea</span>
+            <span className="text-xs font-semibold text-brand-green tracking-wide">Drink</span>
           </div>
         </Link>
 

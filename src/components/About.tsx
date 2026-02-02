@@ -6,31 +6,31 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "What is Ginger and Honey Tea?",
-    answer: "Ginger and Honey Tea is a natural beverage made by infusing fresh ginger with pure honey. it's known for its soothing taste and health benefits."
+    question: "What is Ginger and Honey Drink?",
+    answer: "Ginger and Honey Drink is a natural beverage made by infusing fresh ginger with pure honey. it's known for its soothing taste and health benefits."
   },
   {
-    question: "What are the health benefits of Ginger and Honey Tea?",
+    question: "What are the health benefits of Ginger and Honey Drink?",
     answer: "Boosts immunity, Aids digestion, Helps relieve cold, cough, and sore throat, Reduces inflammation, Supports weight management, Improves blood circulation."
   },
   {
-    question: "Is Ginger and Honey Tea good for colds and flu?",
+    question: "Is Ginger and Honey Drink good for colds and flu?",
     answer: "Yes. Ginger helps reduce congestion and inflammation, while honey soothes the throat and has antibacterial properties."
   },
   {
-    question: "Can I drink Ginger and Honey Tea every day?",
+    question: "Can I drink Ginger and Honey Drink every day?",
     answer: "Yes, it is safe for daily consumption when taken in moderation. One to two cups per day is generally recommended."
   },
   {
-    question: "Is Ginger and Honey Tea good for weight loss?",
+    question: "Is Ginger and Honey Drink good for weight loss?",
     answer: "It may support weight loss by improving digestion, boosting metabolism, and reducing appetite when combined with a healthy lifestyle."
   },
   {
-    question: "Does Ginger and Honey Tea contain caffeine?",
-    answer: "No. Ginger and Honey Tea is naturally caffeine-free."
+    question: "Does Ginger and Honey Drink contain caffeine?",
+    answer: "No. Ginger and Honey Drink is naturally caffeine-free."
   },
   {
-    question: "Can pregnant women drink Ginger and Honey Tea?",
+    question: "Can pregnant women drink Ginger and Honey Drink?",
     answer: "In small amounts, it is generally safe, but pregnant women should consult a healthcare professional before regular consumption."
   },
   {
@@ -38,11 +38,11 @@ const faqs = [
     answer: "People with diabetes should consume it cautiously due to honey’s natural sugars. It’s best to consult a doctor before use."
   },
   {
-    question: "How should Ginger and Honey Tea be prepared?",
+    question: "How should Ginger and Honey Drink be prepared?",
     answer: "Add hot water to ginger, allow it to steep for a few minutes, then add honey to taste. Stir well before drinking."
   },
   {
-    question: "When is the best time to drink Ginger and Honey Tea?",
+    question: "When is the best time to drink Ginger and Honey Drink?",
     answer: "It can be taken in the morning, after meals for digestion, or in the evening for relaxation."
   },
   {
@@ -50,7 +50,7 @@ const faqs = [
     answer: "Excessive consumption may cause stomach irritation or heartburn in some individuals."
   },
   {
-    question: "How should Ginger and Honey Tea be stored?",
+    question: "How should Ginger and Honey Drink be stored?",
     answer: "Store in a cool, dry place away from direct sunlight to maintain freshness."
   }
 ];

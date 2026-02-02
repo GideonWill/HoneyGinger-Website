@@ -16,14 +16,14 @@ const tiers = [
   {
     name: "Small Carton",
     price: "2,000",
-    unit: "40 sachets",
+    unit: "40 boxes",
     features: ["Save GHS 400", "Bulk discount included", "Perfect for families", "Free recipe guide"],
     highlight: true,
   },
   {
     name: "Big Carton",
     price: "4,000",
-    unit: "80 sachets",
+    unit: "80 boxes",
     features: ["Save GHS 800", "Best value for money", "Wholesale pricing", "Priority delivery"],
     highlight: false,
   },
