@@ -12,6 +12,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Preparation", href: "/preparation" },
   { name: "Benefits", href: "/benefits" },
+  { name: "Testimonials", href: "/testimonials" },
   { name: "Pricing", href: "/pricing" },
   { name: "Contact", href: "/contact" },
 ];
@@ -50,10 +51,10 @@ export function Navbar() {
           />
           <div className="flex flex-col -space-y-1">
             <span className="text-lg font-serif italic font-bold">
-              <span className="text-brand-green">Honey</span>{" "}
+              <span className="text-brand-blue">Honey</span>{" "}
               <span className="text-brand-yellow">Ginger</span>
             </span>
-            <span className="text-xs font-semibold text-brand-green tracking-wide">Drink</span>
+            <span className="text-xs font-semibold text-brand-red tracking-wide">Drink</span>
           </div>
         </Link>
 
@@ -66,22 +67,22 @@ export function Navbar() {
                 key={link.name}
                 href={link.href}
                 className={`text-sm font-medium transition-colors relative py-1 ${active
-                  ? "text-brand-green font-bold"
-                  : "text-foreground/80 hover:text-brand-green"
+                  ? "text-brand-blue font-bold"
+                  : "text-foreground/80 hover:text-brand-blue"
                   }`}
               >
                 {link.name}
                 {active && (
                   <motion.div
                     layoutId="navbar-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-green rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-blue rounded-full"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
               </Link>
             );
           })}
-          <Button asChild className="bg-brand-green hover:bg-brand-green/90 text-white rounded-full px-6 ml-4">
+          <Button asChild className="bg-brand-red hover:bg-brand-red/90 text-white rounded-full px-6 ml-4">
             <Link href="/contact">
               Buy Now
             </Link>
@@ -117,8 +118,8 @@ export function Navbar() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={`text-xl font-bold transition-all relative py-3 px-4 rounded-2xl ${active
-                      ? "text-brand-green bg-brand-green/5"
-                      : "text-foreground/70 hover:text-brand-green hover:bg-brand-green/5"
+                      ? "text-brand-blue bg-brand-blue/5"
+                      : "text-foreground/70 hover:text-brand-blue hover:bg-brand-blue/5"
                       }`}
                   >
                     <div className="flex items-center justify-between">
@@ -126,7 +127,7 @@ export function Navbar() {
                       {active && (
                         <motion.div
                           layoutId="mobile-active-dot"
-                          className="w-2 h-2 bg-brand-green rounded-full"
+                          className="w-2 h-2 bg-brand-blue rounded-full"
                         />
                       )}
                     </div>
@@ -134,7 +135,7 @@ export function Navbar() {
                 );
               })}
               <div className="pt-6">
-                <Button asChild className="bg-brand-green hover:bg-brand-green/90 text-white w-full py-7 text-xl rounded-full shadow-lg shadow-brand-green/20">
+                <Button asChild className="bg-brand-red hover:bg-brand-red/90 text-white w-full py-7 text-xl rounded-full shadow-lg shadow-brand-red/20">
                   <Link href="/contact" onClick={() => setIsOpen(false)}>
                     Buy Now
                   </Link>

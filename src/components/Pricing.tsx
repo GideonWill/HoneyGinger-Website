@@ -31,11 +31,11 @@ const tiers = [
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-24 bg-brand-green/5">
+    <section id="pricing" className="py-24 bg-brand-blue/5">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-sm font-bold tracking-widest text-brand-green uppercase mb-4">Pricing</h2>
-          <h3 className="text-4xl font-bold text-brand-green">Choose Your Pack</h3>
+          <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Pricing</h2>
+          <h3 className="text-4xl font-bold text-brand-blue">Choose Your Pack</h3>
           <p className="text-foreground/60 mt-4">Whether you're starting your wellness journey or stocking up, we have the right deal for you.</p>
         </div>
 
@@ -47,14 +47,14 @@ export function Pricing() {
             viewport={{ once: true }}
             className="lg:w-1/3 hidden lg:block"
           >
-            <div className="bg-white rounded-[3rem] p-8 shadow-2xl border border-brand-green/5">
+            <div className="bg-white rounded-[3rem] p-8 shadow-2xl border border-brand-blue/5">
               <img
                 src="/images/joy/12.png"
                 alt="Honey Ginger Bulk Pack"
                 className="w-full h-auto object-contain hover:scale-110 transition-transform duration-700"
               />
               <div className="mt-8 text-center">
-                <p className="text-xl font-bold text-brand-green">Wholesale Ready</p>
+                <p className="text-xl font-bold text-brand-blue">Wholesale Ready</p>
                 <p className="text-foreground/50 text-sm">Best value for massive savings</p>
               </div>
             </div>
@@ -68,19 +68,19 @@ export function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className={`relative bg-white rounded-3xl p-8 border shadow-sm flex flex-col ${tier.highlight ? "border-brand-yellow ring-4 ring-brand-yellow/10" : "border-brand-green/10"
+                className={`relative bg-white rounded-3xl p-8 border shadow-sm flex flex-col ${tier.highlight ? "border-brand-red ring-4 ring-brand-red/10" : "border-brand-blue/10"
                   }`}
               >
                 {tier.highlight && (
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-yellow text-brand-green font-bold text-xs uppercase tracking-widest px-4 py-1 rounded-full">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-red text-white font-bold text-xs uppercase tracking-widest px-4 py-1 rounded-full">
                     Most Popular
                   </div>
                 )}
 
                 <div className="mb-8">
-                  <h4 className="text-xl font-bold text-brand-green mb-2">{tier.name}</h4>
+                  <h4 className="text-xl font-bold text-brand-blue mb-2">{tier.name}</h4>
                   <div className="flex items-baseline space-x-1">
-                    <span className="text-4xl font-bold text-brand-green">GHS {tier.price}</span>
+                    <span className="text-4xl font-bold text-brand-blue">GHS {tier.price}</span>
                   </div>
                   <p className="text-foreground/50 text-sm mt-1">{tier.unit}</p>
                 </div>
@@ -88,8 +88,8 @@ export function Pricing() {
                 <ul className="space-y-4 mb-10 flex-grow">
                   {tier.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center space-x-3 text-foreground/70">
-                      <div className="bg-brand-green/10 p-1 rounded-full">
-                        <Check className="text-brand-green" size={14} />
+                      <div className="bg-brand-blue/10 p-1 rounded-full">
+                        <Check className="text-brand-blue" size={14} />
                       </div>
                       <span className="text-sm">{feature}</span>
                     </li>
@@ -99,8 +99,8 @@ export function Pricing() {
                 <Button
                   asChild
                   className={`w-full py-6 rounded-xl font-bold transition-all ${tier.highlight
-                    ? "bg-brand-yellow hover:bg-brand-yellow/90 text-brand-green"
-                    : "bg-brand-green hover:bg-brand-green/90 text-white"
+                    ? "bg-brand-red hover:bg-brand-red/90 text-white"
+                    : "bg-brand-blue hover:bg-brand-blue/90 text-white"
                     }`}
                 >
                   <Link href="/contact">Order Now</Link>

@@ -28,8 +28,8 @@ export function Contact() {
             className="lg:w-1/2 space-y-12"
           >
             <div>
-              <h2 className="text-sm font-bold tracking-widest text-brand-green uppercase mb-4">Contact Us</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-brand-green mb-6">Let's Start a <br /><span className="text-brand-yellow">Conversation</span></h3>
+              <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Contact Us</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-brand-blue mb-6">Let's Start a <br /><span className="text-brand-red">Conversation</span></h3>
               <p className="text-lg text-foreground/70 leading-relaxed">
                 Have questions about our products or interested in becoming a distributor? We're here to help you naturally.
               </p>
@@ -37,46 +37,50 @@ export function Contact() {
 
             <div className="space-y-8">
               <div className="flex items-start space-x-6 group">
-                <div className="w-12 h-12 bg-brand-green/10 rounded-2xl flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                   <Phone size={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-brand-green mb-1">Phone & WhatsApp</h4>
+                  <h4 className="text-lg font-bold text-brand-blue mb-1">Phone & WhatsApp</h4>
                   <div className="flex flex-col space-y-1">
-                    <a href="https://wa.me/233248511323" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-brand-green transition-colors font-medium">0248511323 (WhatsApp)</a>
-                    <a href="https://wa.me/233207896977" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-brand-green transition-colors font-medium">0207896977 (WhatsApp)</a>
+                    <a href="https://wa.me/233248511323" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-brand-blue transition-colors font-medium">0248511323 (WhatsApp)</a>
+                    <a href="https://wa.me/233207896977" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-brand-blue transition-colors font-medium">0207896977 (WhatsApp)</a>
                   </div>
                 </div>
               </div>
 
               <div className="flex items-start space-x-6 group">
-                <div className="w-12 h-12 bg-brand-green/10 rounded-2xl flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-brand-green mb-1">Email Address</h4>
-                  <a href="mailto:Joy4fame2020@gmail.com" className="text-foreground/70 hover:text-brand-green transition-colors font-medium">Joy4fame2020@gmail.com</a>
+                  <h4 className="text-lg font-bold text-brand-blue mb-1">Email Address</h4>
+                  <a href="mailto:Joy4fame2020@gmail.com" className="text-foreground/70 hover:text-brand-blue transition-colors font-medium">Joy4fame2020@gmail.com</a>
                 </div>
               </div>
 
               <div className="flex items-start space-x-6 group">
-                <div className="w-12 h-12 bg-brand-green/10 rounded-2xl flex items-center justify-center text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <h4 className="text-lg font-bold text-brand-green mb-1">Business Location</h4>
-                  <p className="text-foreground/70 font-medium">Anyaa NIC Off Ablekuma road</p>
+                  <h4 className="text-lg font-bold text-brand-blue mb-1">Business Locations</h4>
+                  <div className="flex flex-col space-y-2">
+                    <p className="text-foreground/70 font-medium">Anyaa NIC Off Ablekuma road</p>
+                    <p className="text-foreground/70 font-medium">Kantamanto Opposite Ecobank</p>
+                    <p className="text-foreground/70 font-medium">Tema Harbour GIFF building</p>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="pt-8 border-t">
-              <h4 className="text-sm font-bold text-brand-green uppercase tracking-widest mb-6">Follow Our Journey</h4>
+              <h4 className="text-sm font-bold text-brand-blue uppercase tracking-widest mb-6">Follow Our Journey</h4>
               <div className="flex space-x-4">
-                <Link href="https://www.facebook.com/Joy4fame-Instant-Honey-Ginger-Drink" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-brand-green/5 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-all duration-300">
+                <Link href="https://www.facebook.com/Joy4fame-Instant-Honey-Ginger-Drink" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300">
                   <Facebook size={20} />
                 </Link>
-                <Link href="https://www.tiktok.com/@joy4fame" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-brand-green/5 flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-white transition-all duration-300">
+                <Link href="https://www.tiktok.com/@joy4fame" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-brand-blue/5 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300">
                   <FaTiktok size={20} />
                 </Link>
               </div>
@@ -90,33 +94,33 @@ export function Contact() {
             viewport={{ once: true }}
             className="lg:w-1/2"
           >
-            <div className="bg-brand-green/5 p-8 md:p-12 rounded-[2.5rem] border border-brand-green/10 shadow-sm">
+            <div className="bg-brand-blue/5 p-8 md:p-12 rounded-[2.5rem] border border-brand-blue/10 shadow-sm">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Full Name</label>
+                    <label className="text-sm font-bold text-brand-blue uppercase tracking-wider ml-1">Full Name</label>
                     <input
                       type="text"
                       name="name"
                       required
                       placeholder="John Doe"
-                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all"
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-blue/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Email</label>
+                    <label className="text-sm font-bold text-brand-blue uppercase tracking-wider ml-1">Email</label>
                     <input
                       type="email"
                       name="email"
                       required
                       placeholder="john@example.com"
-                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all"
+                      className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-blue/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all"
                     />
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Subject</label>
-                  <select className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all appearance-none cursor-pointer">
+                  <label className="text-sm font-bold text-brand-blue uppercase tracking-wider ml-1">Subject</label>
+                  <select className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-blue/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all appearance-none cursor-pointer">
                     <option>General Inquiry</option>
                     <option>Become a Distributor</option>
                     <option>Bulk Order</option>
@@ -124,16 +128,16 @@ export function Contact() {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-brand-green uppercase tracking-wider ml-1">Message</label>
+                  <label className="text-sm font-bold text-brand-blue uppercase tracking-wider ml-1">Message</label>
                   <textarea
                     rows={5}
                     name="message"
                     required
                     placeholder="How can we help you today?"
-                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-green/10 focus:outline-none focus:ring-2 focus:ring-brand-green/20 transition-all resize-none"
+                    className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-blue/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all resize-none"
                   ></textarea>
                 </div>
-                <Button type="submit" className="w-full bg-brand-green hover:bg-brand-green/90 text-white py-6 rounded-2xl text-lg font-bold shadow-lg shadow-brand-green/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
+                <Button type="submit" className="w-full bg-brand-red hover:bg-brand-red/90 text-white py-6 rounded-2xl text-lg font-bold shadow-lg shadow-brand-red/20 transition-all hover:scale-[1.02] active:scale-[0.98]">
                   Send Message via WhatsApp
                 </Button>
               </form>
@@ -142,7 +146,7 @@ export function Contact() {
         </div>
 
         {/* Map Section */}
-        <div className="mt-24 rounded-[3rem] overflow-hidden border border-brand-green/10 shadow-sm h-[400px]">
+        <div className="mt-24 rounded-[3rem] overflow-hidden border border-brand-blue/10 shadow-sm h-[400px]">
           <iframe
             width="100%"
             height="100%"
@@ -166,7 +170,7 @@ export function Contact() {
               alt="Honey Ginger Premium Products"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-green/90 to-brand-green/40 flex items-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/90 to-brand-blue/40 flex items-center">
               <div className="container mx-auto px-12">
                 <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Join the Wellness Movement</h3>
                 <p className="text-white/90 text-xl max-w-2xl">Thousands of satisfied customers trust our premium Honey Ginger for their daily energy boost</p>

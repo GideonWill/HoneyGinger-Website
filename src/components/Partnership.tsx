@@ -27,7 +27,7 @@ export function Partnership() {
   return (
     <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <div className="bg-brand-green rounded-[3rem] overflow-hidden flex flex-col lg:flex-row items-stretch">
+        <div className="bg-brand-blue rounded-[3rem] overflow-hidden flex flex-col lg:flex-row items-stretch">
           <div className="lg:w-1/2 p-12 lg:p-20 space-y-8">
             <h2 className="text-sm font-bold tracking-widest text-brand-yellow uppercase">Partnership</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
@@ -51,7 +51,7 @@ export function Partnership() {
             </div>
 
             <div className="pt-8">
-              <Button asChild className="bg-brand-yellow hover:bg-white text-brand-green font-bold text-lg px-10 py-6 rounded-full h-auto transition-colors">
+              <Button asChild className="bg-brand-red hover:bg-white hover:text-brand-red text-white font-bold text-lg px-10 py-6 rounded-full h-auto transition-colors">
                 <Link href="/contact">Apply as a Distributor</Link>
               </Button>
             </div>
@@ -63,7 +63,7 @@ export function Partnership() {
               alt="Business Partners"
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-brand-green/20 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-brand-blue/20 mix-blend-multiply" />
           </div>
         </div>
       </div>
