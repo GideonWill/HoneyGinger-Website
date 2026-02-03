@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Honey Ginger Drink",
-  description: "Premium natural energy drink crafted with the finest honey and fresh ginger. Taste the tradition of wellness in every sip.",
+  title: "Instant Honey Ginger Drink",
+  description: "Premium natural energy drink crafted with the finest honey and fresh ginger. Taste the tradition of wellness in every sip of Instant Honey Ginger Drink.",
   icons: {
     icon: "/images/joy/logo.jpeg",
   },

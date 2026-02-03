@@ -173,7 +173,7 @@ export function Contact() {
             <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/90 to-brand-blue/40 flex items-center">
               <div className="container mx-auto px-12">
                 <h3 className="text-4xl md:text-5xl font-bold text-white mb-4">Join the Wellness Movement</h3>
-                <p className="text-white/90 text-xl max-w-2xl">Thousands of satisfied customers trust our premium Honey Ginger for their daily energy boost</p>
+                <p className="text-white/90 text-xl max-w-2xl">Thousands of satisfied customers trust our premium Instant Honey Ginger Drink for their daily energy boost</p>
               </div>
             </div>
           </motion.div>

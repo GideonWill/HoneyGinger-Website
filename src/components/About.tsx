@@ -1,36 +1,36 @@
 "use client";
 
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ShieldCheck } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "What is Ginger and Honey Drink?",
-    answer: "Ginger and Honey Drink is a natural beverage made by infusing fresh ginger with pure honey. it's known for its soothing taste and health benefits."
+    question: "What is Instant Honey Ginger Drink?",
+    answer: "Instant Honey Ginger Drink is a natural beverage made by infusing fresh ginger with pure honey. it's known for its soothing taste and health benefits."
   },
   {
-    question: "What are the health benefits of Ginger and Honey Drink?",
+    question: "What are the health benefits of Instant Honey Ginger Drink?",
     answer: "Boosts immunity, Aids digestion, Helps relieve cold, cough, and sore throat, Reduces inflammation, Supports weight management, Improves blood circulation."
   },
   {
-    question: "Is Ginger and Honey Drink good for colds and flu?",
+    question: "Is Instant Honey Ginger Drink good for colds and flu?",
     answer: "Yes. Ginger helps reduce congestion and inflammation, while honey soothes the throat and has antibacterial properties."
   },
   {
-    question: "Can I drink Ginger and Honey Drink every day?",
+    question: "Can I drink Instant Honey Ginger Drink every day?",
     answer: "Yes, it is safe for daily consumption when taken in moderation. One to two cups per day is generally recommended."
   },
   {
-    question: "Is Ginger and Honey Drink good for weight loss?",
+    question: "Is Instant Honey Ginger Drink good for weight loss?",
     answer: "It may support weight loss by improving digestion, boosting metabolism, and reducing appetite when combined with a healthy lifestyle."
   },
   {
-    question: "Does Ginger and Honey Drink contain caffeine?",
-    answer: "No. Ginger and Honey Drink is naturally caffeine-free."
+    question: "Does Instant Honey Ginger Drink contain caffeine?",
+    answer: "No. Instant Honey Ginger Drink is naturally caffeine-free."
   },
   {
-    question: "Can pregnant women drink Ginger and Honey Drink?",
+    question: "Can pregnant women drink Instant Honey Ginger Drink?",
     answer: "In small amounts, it is generally safe, but pregnant women should consult a healthcare professional before regular consumption."
   },
   {
@@ -38,11 +38,11 @@ const faqs = [
     answer: "People with diabetes should consume it cautiously due to honey’s natural sugars. It’s best to consult a doctor before use."
   },
   {
-    question: "How should Ginger and Honey Drink be prepared?",
+    question: "How should Instant Honey Ginger Drink be prepared?",
     answer: "Add hot water to ginger, allow it to steep for a few minutes, then add honey to taste. Stir well before drinking."
   },
   {
-    question: "When is the best time to drink Ginger and Honey Drink?",
+    question: "When is the best time to drink Instant Honey Ginger Drink?",
     answer: "It can be taken in the morning, after meals for digestion, or in the evening for relaxation."
   },
   {
@@ -50,7 +50,7 @@ const faqs = [
     answer: "Excessive consumption may cause stomach irritation or heartburn in some individuals."
   },
   {
-    question: "How should Ginger and Honey Drink be stored?",
+    question: "How should Instant Honey Ginger Drink be stored?",
     answer: "Store in a cool, dry place away from direct sunlight to maintain freshness."
   }
 ];
@@ -94,20 +94,33 @@ export function About() {
                 <span className="text-brand-red">Nature's Finest</span>
               </h3>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                At Honey Ginger, we believe that true energy comes from nature. Our journey started with a simple tradition: the healing power of ginger and the pure sweetness of honey.
+                At Instant Honey Ginger, we believe that true energy comes from nature. Our journey started with a simple tradition: the healing power of ginger and the pure sweetness of honey.
               </p>
               <p className="text-lg text-foreground/70 leading-relaxed">
                 We&apos;ve refined this age-old wisdom into a premium beverage that fits your modern lifestyle. Every bottle is a commitment to quality, health, and the vibrant spirit of Africa. No artificial colors, no preservatives—just pure, natural vitality.
               </p>
 
-              <div className="grid grid-cols-2 gap-8 pt-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 items-center border-t border-brand-blue/5">
                 <div className="space-y-2">
                   <p className="text-3xl font-bold text-brand-blue">100%</p>
-                  <p className="text-sm text-foreground/50 uppercase">Natural Ingredients</p>
+                  <p className="text-sm text-foreground/50 uppercase tracking-wider font-semibold">Natural Ingredients</p>
                 </div>
                 <div className="space-y-2">
                   <p className="text-3xl font-bold text-brand-blue">Zero</p>
-                  <p className="text-sm text-foreground/50 uppercase">Additives</p>
+                  <p className="text-sm text-foreground/50 uppercase tracking-wider font-semibold">Additives</p>
+                </div>
+                <div className="col-span-2 md:col-span-1 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-brand-blue/10 md:pl-8">
+                  <div className="flex items-center space-x-3 text-brand-blue font-bold">
+                    <img
+                      src="/images/joy/Approval Logo.png"
+                      alt="FDA Approval Logo"
+                      className="h-10 w-auto flex-shrink-0"
+                    />
+                    <div className="flex flex-col">
+                      <span className="text-sm uppercase tracking-widest leading-none">FDA Approved</span>
+                      <span className="text-[10px] font-bold text-foreground/50 mt-1 font-mono uppercase leading-none">NO: FDA/Dk-20-122</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -129,7 +142,7 @@ export function About() {
                 <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Support</h2>
                 <h3 className="text-4xl font-bold text-brand-blue mb-6">Frequently Asked Questions</h3>
                 <p className="text-foreground/70 leading-relaxed">
-                  Everything you need to know about our premium Honey Ginger drink and its natural benefits.
+                  Everything you need to know about our premium Instant Honey Ginger drink and its natural benefits.
                 </p>
               </div>
               <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] hidden lg:block">

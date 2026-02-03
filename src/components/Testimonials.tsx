@@ -56,7 +56,7 @@ export function Testimonials() {
                         transition={{ delay: 0.2 }}
                         className="text-lg text-foreground/70"
                     >
-                        Real stories from real people who have experienced the natural power of our Honey Ginger Drink.
+                        Real stories from real people who have experienced the natural power of our Instant Honey Ginger Drink.
                     </motion.p>
                 </div>
 

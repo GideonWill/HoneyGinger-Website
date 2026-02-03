@@ -50,7 +50,7 @@ export function Pricing() {
             <div className="bg-white rounded-[3rem] p-8 shadow-2xl border border-brand-blue/5">
               <img
                 src="/images/joy/12.png"
-                alt="Honey Ginger Bulk Pack"
+                alt="Instant Honey Ginger Drink Bulk Pack"
                 className="w-full h-auto object-contain hover:scale-110 transition-transform duration-700"
               />
               <div className="mt-8 text-center">

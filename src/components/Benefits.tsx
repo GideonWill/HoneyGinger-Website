@@ -85,7 +85,7 @@ export function Benefits() {
                   </h2>
 
                   <p className="text-lg text-foreground/70 leading-relaxed max-w-md mx-auto lg:mx-0">
-                    Experience the natural power of our premium honey ginger blend.
+                    Experience the natural power of our premium Instant Honey Ginger Drink.
                     Crafted to support your wellness journey in every sip.
                   </p>
                 </div>

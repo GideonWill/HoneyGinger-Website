@@ -9,7 +9,7 @@ const steps = [
   {
     icon: <Utensils className="text-brand-red" size={32} />,
     title: "Open Sachet",
-    description: "Take one sachet of our premium Honey Ginger mix.",
+    description: "Take one sachet of our premium Instant Honey Ginger Drink mix.",
   },
   {
     icon: <Droplets className="text-brand-red" size={32} />,
@@ -52,7 +52,7 @@ export function Preparation() {
             Perfect <span className="text-brand-red">Preparation</span>
           </motion.h1>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
-            Follow these simple steps to enjoy the full flavor and health benefits of our premium Honey Ginger blend.
+            Follow these simple steps to enjoy the full flavor and health benefits of our premium Instant Honey Ginger Drink.
           </p>
           <div className="w-24 h-1.5 bg-brand-red mx-auto rounded-full" />
         </div>
@@ -94,7 +94,7 @@ export function Preparation() {
             <div className="relative z-10">
               <h3 className="text-3xl md:text-5xl font-bold mb-6">Ready for a Healthy Sip?</h3>
               <p className="text-white/80 text-lg mb-12 max-w-2xl mx-auto">
-                Join thousands of others starting their day with the natural energy of Honey Ginger.
+                Join thousands of others starting their day with the natural energy of Instant Honey Ginger Drink.
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Button asChild className="bg-brand-red text-white hover:bg-white hover:text-brand-red text-xl px-12 py-8 rounded-full h-auto font-bold transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand-blue/20">

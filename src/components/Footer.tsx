@@ -17,15 +17,15 @@ export function Footer() {
               />
               <div className="flex flex-col -space-y-1">
                 <span className="text-xl font-serif italic font-bold">
-                  <span className="text-white">Honey</span>{" "}
-                  <span className="text-brand-yellow">Ginger</span>
+                  <span className="text-brand-yellow">Instant</span>{" "}
+                  <span className="text-brand-red">Honey Ginger</span>
                 </span>
-                <span className="text-sm font-semibold text-brand-red tracking-wide">Drink</span>
+                <span className="text-sm font-semibold text-brand-yellow tracking-wide">Drink</span>
               </div>
             </Link>
             <p className="text-white/70 leading-relaxed">
               Premium natural energy drink crafted with the finest honey and fresh ginger.
-              Taste the tradition of wellness in every sip.
+              Taste the tradition of wellness in every sip of Instant Honey Ginger Drink.
             </p>
             <div className="flex space-x-4">
               <Link href="https://www.facebook.com/Joy4fame-Instant-Honey-Ginger-Drink" target="_blank" rel="noopener noreferrer" className="hover:text-brand-yellow transition-colors">
@@ -83,7 +83,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-16 pt-8 text-center text-white/50 text-sm">
-          <p>&copy; {new Date().getFullYear()} Honey Ginger Drink. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Instant Honey Ginger Drink. All rights reserved.</p>
         </div>
       </div>
     </footer>
