@@ -97,7 +97,7 @@ export function About() {
                 At Honey Ginger, we believe that true energy comes from nature. Our journey started with a simple tradition: the healing power of ginger and the pure sweetness of honey.
               </p>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                We've refined this age-old wisdom into a premium beverage that fits your modern lifestyle. Every bottle is a commitment to quality, health, and the vibrant spirit of Africa. No artificial colors, no preservatives—just pure, natural vitality.
+                We&apos;ve refined this age-old wisdom into a premium beverage that fits your modern lifestyle. Every bottle is a commitment to quality, health, and the vibrant spirit of Africa. No artificial colors, no preservatives—just pure, natural vitality.
               </p>
 
               <div className="grid grid-cols-2 gap-8 pt-8">

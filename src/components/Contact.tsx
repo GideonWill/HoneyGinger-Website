@@ -29,9 +29,9 @@ export function Contact() {
           >
             <div>
               <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Contact Us</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-brand-blue mb-6">Let's Start a <br /><span className="text-brand-red">Conversation</span></h3>
+              <h3 className="text-4xl md:text-5xl font-bold text-brand-blue mb-6">Let&apos;s Start a <br /><span className="text-brand-red">Conversation</span></h3>
               <p className="text-lg text-foreground/70 leading-relaxed">
-                Have questions about our products or interested in becoming a distributor? We're here to help you naturally.
+                Have questions about our products or interested in becoming a distributor? We&apos;re here to help you naturally.
               </p>
             </div>
 

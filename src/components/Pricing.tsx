@@ -36,7 +36,7 @@ export function Pricing() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Pricing</h2>
           <h3 className="text-4xl font-bold text-brand-blue">Choose Your Pack</h3>
-          <p className="text-foreground/60 mt-4">Whether you're starting your wellness journey or stocking up, we have the right deal for you.</p>
+          <p className="text-foreground/60 mt-4">Whether you&apos;re starting your wellness journey or stocking up, we have the right deal for you.</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 items-center">

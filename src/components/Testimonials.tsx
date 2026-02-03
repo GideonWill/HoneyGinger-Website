@@ -84,7 +84,7 @@ export function Testimonials() {
 
                             <blockquote className="flex-grow">
                                 <p className="text-lg text-foreground/80 italic mb-6">
-                                    "{testimonial.content}"
+                                    &quot;{testimonial.content}&quot;
                                 </p>
                             </blockquote>
 
