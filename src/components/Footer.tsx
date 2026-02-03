@@ -18,7 +18,7 @@ export function Footer() {
               <div className="flex flex-col -space-y-1">
                 <span className="text-xl font-serif italic font-bold">
                   <span className="text-brand-yellow">Instant</span>{" "}
-                  <span className="text-brand-red">Honey Ginger</span>
+                  <span className="text-brand-red" style={{ color: '#F70000' }}>Honey Ginger</span>
                 </span>
                 <span className="text-sm font-semibold text-brand-yellow tracking-wide">Drink</span>
               </div>
