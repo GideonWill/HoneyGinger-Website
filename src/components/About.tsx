@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, Minus, ShieldCheck } from "lucide-react";
+import { Plus, Minus, ShieldCheck, Volume2 } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -59,183 +59,247 @@ export function About() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="space-y-0">
-      {/* Our Story Section */}
-      <section id="about" className="py-24 bg-white overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="lg:w-1/2 relative"
-            >
-              <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl">
-                <img
-                  src="/images/joy/1.jpeg"
-                  alt="Our Heritage"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-yellow rounded-3xl -z-10 hidden md:block" />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="lg:w-1/2 space-y-6"
-            >
-              <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase">Our Story</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-brand-blue leading-tight">
-                Crafting Wellness Through <br />
-                <span className="text-brand-red">Nature's Finest</span>
-              </h3>
-              <p className="text-lg text-foreground/70 leading-relaxed">
-                At Instant Honey Ginger, we believe that true energy comes from nature. Our journey started with a simple tradition: the healing power of ginger and the pure sweetness of honey.
+    <div
+      className="space-y-0 bg-cover bg-center sm:bg-fixed bg-no-repeat relative"
+      style={{ backgroundImage: 'url("/images/joy/bb1.jpg")' }}
+    >
+      <div className="absolute inset-0 bg-white/80 z-0" />
+      <div className="relative z-10">
+        <section id="recordings" className="py-24 bg-white overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Adverts</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-brand-blue">Listen to Our <span className="text-brand-red">Story</span></h3>
+              <p className="text-foreground/60 mt-4 leading-relaxed">
+                Discover the quality and efficiency behind our Instant Honey Ginger drink through our official audio presentations.
               </p>
-              <p className="text-lg text-foreground/70 leading-relaxed">
-                We&apos;ve refined this age-old wisdom into a premium beverage that fits your modern lifestyle. Every bottle is a commitment to quality, health, and the vibrant spirit of Africa. No artificial colors, no preservatives—just pure, natural vitality.
-              </p>
+            </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 items-center border-t border-brand-blue/5">
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-brand-blue">100%</p>
-                  <p className="text-sm text-foreground/50 uppercase tracking-wider font-semibold">Natural Ingredients</p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-3xl font-bold text-brand-blue">Zero</p>
-                  <p className="text-sm text-foreground/50 uppercase tracking-wider font-semibold">Additives</p>
-                </div>
-                <div className="col-span-2 md:col-span-1 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-brand-blue/10 md:pl-8">
-                  <div className="flex items-center space-x-3 text-brand-blue font-bold">
-                    <img
-                      src="/images/joy/Approval Logo.png"
-                      alt="FDA Approval Logo"
-                      className="h-10 w-auto flex-shrink-0"
-                    />
-                    <div className="flex flex-col">
-                      <span className="text-sm uppercase tracking-widest leading-none">FDA Approved</span>
-                      <span className="text-[10px] font-bold text-foreground/50 mt-1 font-mono uppercase leading-none">NO: FDA/Dk-20-122</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {[
+                {
+                  title: "Quality & Efficiency (Mix)",
+                  source: "/record1/J4FAME ENG MIX.mp3.mpeg",
+                  bg: "/images/joy/15.jpeg",
+                  description: "Official English mix detailing our production quality."
+                },
+                {
+                  title: "Ginger Wellness (Long)",
+                  source: "/record1/J4FAME GINGER long.mp3.mpeg",
+                  bg: "/images/joy/17.jpeg",
+                  description: "In-depth talk about the health benefits and pureness of our drink."
+                }
+              ].map((record, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.2 }}
+                  viewport={{ once: true }}
+                  className="relative group rounded-[2.5rem] overflow-hidden shadow-xl"
+                >
+                  <div className="absolute inset-0">
+                    <img src={record.bg} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={record.title} />
+                    <div className="absolute inset-0 bg-brand-blue/80" />
+                  </div>
+
+                  <div className="relative p-10 flex flex-col items-center text-center text-white">
+                    <div className="w-16 h-16 bg-brand-red rounded-full flex items-center justify-center mb-6 shadow-lg">
+                      <Volume2 className="text-white" size={32} />
+                    </div>
+                    <h4 className="text-2xl font-bold mb-4">{record.title}</h4>
+                    <p className="text-white/80 mb-8 max-w-sm">{record.description}</p>
+
+                    <div className="w-full bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20">
+                      <audio controls className="w-full h-10 filter invert brightness-200">
+                        <source src={record.source} type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                      </audio>
                     </div>
                   </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section id="faqs" className="py-24 bg-brand-blue/5">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="lg:w-1/3 space-y-8 lg:sticky lg:top-32"
-            >
-              <div>
-                <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Support</h2>
-                <h3 className="text-4xl font-bold text-brand-blue mb-6">Frequently Asked Questions</h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  Everything you need to know about our premium Instant Honey Ginger drink and its natural benefits.
-                </p>
-              </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] hidden lg:block">
-                <img
-                  src="/images/joy/5.jpeg"
-                  alt="Quality Ingredients"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-            </motion.div>
-
-            <div className="lg:w-2/3 w-full space-y-4">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-2xl border border-brand-blue/10 overflow-hidden shadow-sm"
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-brand-blue/5 transition-colors"
-                  >
-                    <span className="text-lg font-bold text-brand-blue pr-8">{faq.question}</span>
-                    <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIndex === index ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'}`}>
-                      {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
-                    </div>
-                  </button>
-                  <AnimatePresence>
-                    {openIndex === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                      >
-                        <div className="px-8 pb-6 text-foreground/70 leading-relaxed border-t border-brand-blue/5 pt-4">
-                          {faq.answer}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </motion.div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Product Gallery Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Our Premium Quality</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-brand-blue">Experience the <span className="text-brand-red">Difference</span></h3>
-            <p className="text-foreground/60 mt-4 max-w-2xl mx-auto">From sourcing to packaging, every step reflects our commitment to excellence</p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { img: "/images/joy/2.jpeg", caption: "Premium Packaging" },
-              { img: "/images/joy/3.jpeg", caption: "Quality Ingredients" },
-              { img: "/images/joy/16.jpeg", caption: "Perfect Blend" },
-              { img: "/images/joy/13.jpeg", caption: "Natural Goodness" }
-            ].map((item, index) => (
+        {/*Our Story Section */}
+        <section id="about" className="py-24 bg-white overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-3xl aspect-square bg-brand-blue/5"
+                className="lg:w-1/2 relative"
               >
-                <img
-                  src={item.img}
-                  alt={item.caption}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <p className="text-white font-bold text-lg">{item.caption}</p>
+                <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl">
+                  <img
+                    src="/images/joy/1.jpeg"
+                    alt="Our Heritage"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-brand-yellow rounded-3xl -z-10 hidden md:block" />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="lg:w-1/2 space-y-6"
+              >
+                <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase">Our Story</h2>
+                <h3 className="text-4xl md:text-5xl font-bold text-brand-blue leading-tight">
+                  Crafting Wellness Through <br />
+                  <span className="text-brand-red">Nature's Finest</span>
+                </h3>
+                <p className="text-lg text-foreground/70 leading-relaxed">
+                  At Instant Honey Ginger, we believe that true energy comes from nature. Our journey started with a simple tradition: the healing power of ginger and the pure sweetness of honey.
+                </p>
+                <p className="text-lg text-foreground/70 leading-relaxed">
+                  We&apos;ve refined this age-old wisdom into a premium beverage that fits your modern lifestyle. Every bottle is a commitment to quality, health, and the vibrant spirit of Africa. No artificial colors, no preservatives—just pure, natural vitality.
+                </p>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 items-center border-t border-brand-blue/5">
+                  <div className="space-y-2">
+                    <p className="text-3xl font-bold text-brand-blue">100%</p>
+                    <p className="text-sm text-foreground/50 uppercase tracking-wider font-semibold">Natural Ingredients</p>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-3xl font-bold text-brand-blue">Zero</p>
+                    <p className="text-sm text-foreground/50 uppercase tracking-wider font-semibold">Additives</p>
+                  </div>
+                  <div className="col-span-2 md:col-span-1 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-brand-blue/10 md:pl-8">
+                    <div className="flex items-center space-x-3 text-brand-blue font-bold">
+                      <img
+                        src="/images/joy/Approval Logo.png"
+                        alt="FDA Approval Logo"
+                        className="h-10 w-auto flex-shrink-0"
+                      />
+                      <div className="flex flex-col">
+                        <span className="text-sm uppercase tracking-widest leading-none">FDA Approved</span>
+                        <span className="text-[10px] font-bold text-foreground/50 mt-1 font-mono uppercase leading-none">NO: FDA/Dk-20-122</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* FAQ Section */}
+        <section id="faqs" className="py-24 bg-brand-blue/5">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col lg:flex-row gap-16 items-start">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="lg:w-1/3 space-y-8 lg:sticky lg:top-32"
+              >
+                <div>
+                  <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Support</h2>
+                  <h3 className="text-4xl font-bold text-brand-blue mb-6">Frequently Asked Questions</h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    Everything you need to know about our premium Instant Honey Ginger drink and its natural benefits.
+                  </p>
+                </div>
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] hidden lg:block">
+                  <img
+                    src="/images/joy/5.jpeg"
+                    alt="Quality Ingredients"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </motion.div>
+
+              <div className="lg:w-2/3 w-full space-y-4">
+                {faqs.map((faq, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                    className="bg-white rounded-2xl border border-brand-blue/10 overflow-hidden shadow-sm"
+                  >
+                    <button
+                      onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                      className="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-brand-blue/5 transition-colors"
+                    >
+                      <span className="text-lg font-bold text-brand-blue pr-8">{faq.question}</span>
+                      <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIndex === index ? 'bg-brand-blue text-white' : 'bg-brand-blue/10 text-brand-blue'}`}>
+                        {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
+                      </div>
+                    </button>
+                    <AnimatePresence>
+                      {openIndex === index && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <div className="px-8 pb-6 text-foreground/70 leading-relaxed border-t border-brand-blue/5 pt-4">
+                            {faq.answer}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Product Gallery Section */}
+        <section className="py-24 bg-white overflow-hidden">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Our Premium Quality</h2>
+              <h3 className="text-4xl md:text-5xl font-bold text-brand-blue">Experience the <span className="text-brand-red">Difference</span></h3>
+              <p className="text-foreground/60 mt-4 max-w-2xl mx-auto">From sourcing to packaging, every step reflects our commitment to excellence</p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[
+                { img: "/images/joy/2.jpeg", caption: "Premium Packaging" },
+                { img: "/images/joy/3.jpeg", caption: "Quality Ingredients" },
+                { img: "/images/joy/16.jpeg", caption: "Perfect Blend" },
+                { img: "/images/joy/13.jpeg", caption: "Natural Goodness" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group relative overflow-hidden rounded-3xl aspect-square bg-brand-blue/5"
+                >
+                  <img
+                    src={item.img}
+                    alt={item.caption}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <p className="text-white font-bold text-lg">{item.caption}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

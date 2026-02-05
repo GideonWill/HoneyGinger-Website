@@ -8,7 +8,10 @@ import Link from "next/link";
 export function Hero() {
   return (
     <div className="space-y-0">
-      <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
+      <section
+        id="home"
+        className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white"
+      >
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -90,9 +93,38 @@ export function Hero() {
         </div>
       </section>
 
+      {/* Honey Hero Video Section */}
+      <section className="relative h-[60vh] md:h-screen w-full overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/images/joy/honey.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            className="text-center text-white px-6"
+          >
+            <h3 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Rich & Pure</h3>
+            <p className="text-xl md:text-2xl font-medium drop-shadow-lg">Straight From Nature's Heart</p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Product Showcase Section */}
-      <section className="py-24 bg-brand-blue/5 overflow-hidden">
-        <div className="container mx-auto px-6">
+      <section
+        className="relative py-24 bg-cover bg-center sm:bg-fixed bg-no-repeat overflow-hidden"
+        style={{ backgroundImage: 'url("/images/joy/bg tea.jpg")' }}
+      >
+        <div className="absolute inset-0 bg-white/70 z-0" />
+        <div className="container relative mx-auto px-6 z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="text-sm font-bold tracking-widest text-brand-blue uppercase mb-4">Our Collection</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-brand-blue">Purely Handcrafted <span className="text-brand-red">For You</span></h3>
