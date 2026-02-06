@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 const tiers = [
   {
@@ -114,6 +115,37 @@ export function Pricing() {
               ))}
             </div>
           </div>
+
+          {/* New Section with 23.jpg */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-24 bg-white rounded-[3.5rem] overflow-hidden shadow-2xl border border-brand-blue/5 overflow-hidden"
+          >
+            <div className="flex flex-col lg:flex-row items-center">
+              <div className="lg:w-1/2 relative h-[300px] lg:h-[450px] w-full">
+                <Image
+                  src="/images/joy/23.jpg"
+                  alt="Our Premium Bulk Packs"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="lg:w-1/2 p-12 lg:p-16 space-y-6">
+                <h3 className="text-3xl font-bold text-brand-blue">Pure Natural Vitality <br /><span className="text-brand-red">In Every Pack</span></h3>
+                <p className="text-lg text-foreground/70 leading-relaxed italic">
+                  &quot;Experience the premium quality of our bulk packs, designed for maximum freshness and convenience.&quot;
+                </p>
+                <div className="pt-4">
+                  <Button asChild className="bg-brand-blue hover:bg-brand-blue/90 text-white rounded-full px-8 py-6 text-lg font-bold">
+                    <Link href="/contact">Inquire for Bulk Orders</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

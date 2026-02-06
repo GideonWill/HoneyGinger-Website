@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -72,9 +73,11 @@ export function Hero() {
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative z-10 w-full max-w-[500px] lg:max-w-none h-auto overflow-hidden rounded-[3rem]">
-              <img
+              <Image
                 src="/images/joy/4.jpeg"
                 alt="Fresh Ginger and Honey"
+                width={800}
+                height={600}
                 className="w-full h-auto max-h-[75vh] object-contain object-top hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -93,18 +96,14 @@ export function Hero() {
         </div>
       </section>
 
-      {/* Honey Hero Video Section */}
+      {/* Honey Hero Image Section */}
       <section className="relative h-[60vh] md:h-screen w-full overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/images/joy/honey.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <Image
+          src="/images/joy/19.jpg"
+          alt="Rich and Pure Honey"
+          fill
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

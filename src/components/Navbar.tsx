@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -37,6 +38,9 @@ export function Navbar() {
     return false;
   };
 
+  const isContactPage = pathname === "/contact";
+  const useWhiteText = isContactPage && !scrolled;
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
@@ -44,17 +48,20 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-4">
-          <img
-            src="/images/joy/logo.jpeg"
-            alt="Joy4Fame Logo"
-            className="h-14 w-auto object-contain"
-          />
+          <div className="relative h-14 w-24">
+            <Image
+              src="/images/joy/logo.jpeg"
+              alt="Joy4Fame Logo"
+              fill
+              className="object-contain rounded-lg"
+            />
+          </div>
           <div className="flex flex-col -space-y-1">
             <span className="text-lg font-serif italic font-bold">
-              <span className="text-brand-blue">Instant</span>{" "}
+              <span className={useWhiteText ? "text-white drop-shadow-md" : "text-brand-blue"}>Instant</span>{" "}
               <span className="text-brand-red" style={{ color: '#F70000' }}>Honey Ginger</span>
             </span>
-            <span className="text-xs font-semibold text-brand-blue tracking-wide">Drink</span>
+            <span className={`text-xs font-semibold tracking-wide ${useWhiteText ? "text-white/90 drop-shadow-sm" : "text-brand-blue"}`}>Drink</span>
           </div>
         </Link>
 
@@ -62,20 +69,26 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => {
             const active = isActive(link.href);
+
+            const baseTextColor = useWhiteText
+              ? "text-white hover:text-white/80 drop-shadow-sm"
+              : "text-foreground/80 hover:text-brand-blue";
+
+            const activeTextColor = useWhiteText
+              ? "text-white font-bold drop-shadow-md"
+              : "text-brand-blue font-bold";
+
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors relative py-1 ${active
-                  ? "text-brand-blue font-bold"
-                  : "text-foreground/80 hover:text-brand-blue"
-                  }`}
+                className={`text-sm font-medium transition-colors relative py-1 ${active ? activeTextColor : baseTextColor}`}
               >
                 {link.name}
                 {active && (
                   <motion.div
                     layoutId="navbar-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-blue rounded-full"
+                    className={`absolute -bottom-1 left-0 right-0 h-0.5 rounded-full ${useWhiteText ? "bg-white" : "bg-brand-blue"}`}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -93,7 +106,7 @@ export function Navbar() {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-foreground p-2"
+            className={`p-2 transition-colors ${scrolled || isOpen || !isContactPage ? "text-foreground" : "text-white"}`}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
