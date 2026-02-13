@@ -97,6 +97,35 @@ export function Benefits() {
                 </motion.div>
               ))}
             </div>
+
+            {/* Expanded SEO Content Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-32 p-12 md:p-16 bg-brand-blue/5 rounded-[3rem] border border-brand-blue/10"
+            >
+              <div className="max-w-4xl mx-auto text-center space-y-8">
+                <h3 className="text-3xl md:text-4xl font-bold text-brand-blue">Why Choose Honey Ginger for Your Wellness?</h3>
+                <p className="text-xl text-foreground/70 leading-relaxed text-left md:text-center">
+                  Honey ginger drinks support digestion, boost immunity, and offer natural energy without artificial ingredients. Both honey and ginger are rich in antioxidants and have been used traditionally to support wellness. Our premium blend ensures you get the maximum benefit of these natural powerhouses in a convenient, delicious form that fits your busy lifestyle.
+                </p>
+                <div className="pt-8">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-block"
+                  >
+                    <a
+                      href="/pricing"
+                      className="inline-flex items-center justify-center px-10 py-5 bg-brand-red text-white font-bold text-xl rounded-full shadow-lg shadow-brand-red/20 hover:bg-brand-red/90 transition-all"
+                    >
+                      View Pricing & Packages
+                    </a>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </section>
       </div>

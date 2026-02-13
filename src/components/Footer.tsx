@@ -30,6 +30,9 @@ export function Footer() {
                 Premium natural energy drink crafted with the finest honey and fresh ginger.
                 Taste the tradition of wellness in every sip of Instant Honey Ginger Drink.
               </p>
+              <p className="text-brand-blue/80 text-sm leading-relaxed">
+                Find us at Anyaa NIC (Off Ablekuma Road), Kantamanto (Opposite Ecobank), and Tema Harbour (GIFF Building). We supply retail & wholesale honey ginger drinks across Greater Accra and surrounding regions.
+              </p>
               <div className="flex space-x-4">
                 <Link href="https://www.facebook.com/Joy4fame-Instant-Honey-Ginger-Drink" target="_blank" rel="noopener noreferrer" className="text-brand-blue hover:text-brand-red transition-colors">
                   <Facebook size={20} />

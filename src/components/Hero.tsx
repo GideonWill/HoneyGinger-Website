@@ -34,7 +34,7 @@ export function Hero() {
             </h1>
 
             <p className="text-lg md:text-xl text-foreground/70 max-w-lg leading-relaxed">
-              Experience the perfect blend of raw honey and fresh ginger. A premium beverage crafted for wellness, vitality, and pure refreshment.
+              Experience the perfect blend of raw honey and fresh ginger. A premium beverage crafted for wellness, vitality, and pure refreshment. Explore our <Link href="/benefits" className="text-brand-red font-bold hover:underline">natural health benefits</Link> today.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

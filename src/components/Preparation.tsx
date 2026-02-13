@@ -56,8 +56,11 @@ export function Preparation() {
             >
               Perfect <span className="text-brand-red">Preparation</span>
             </motion.h1>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto mb-8">
-              Follow these simple steps to enjoy the full flavor and health benefits of our premium Instant Honey Ginger Drink.
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto mb-8">
+              Discover the perfect way to enjoy our premium Instant Honey Ginger Drink. Whether you prefer a warming, soothing cup in the morning or a refreshing, iced boost on a hot day, our balanced blend of pure honey and fresh ginger delivers consistent health benefits and exceptional flavor every time.
+            </p>
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto mb-12">
+              Our unique preparation method preserves the natural antioxidants and active gingerol, ensuring you get the most out of every sachet. It's the ideal natural alternative to sugary drinks and coffee, providing a sustained energy boost without the crash.
             </p>
             <div className="w-24 h-1.5 bg-brand-red mx-auto rounded-full" />
           </div>

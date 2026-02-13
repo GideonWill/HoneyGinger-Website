@@ -3,6 +3,8 @@
 import { Plus, Minus, ShieldCheck, Volume2 } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -157,11 +159,20 @@ export function About() {
                   <span className="text-brand-red">Nature's Finest</span>
                 </h3>
                 <p className="text-lg text-foreground/70 leading-relaxed">
-                  At Instant Honey Ginger, we believe that true energy comes from nature. Our journey started with a simple tradition: the healing power of ginger and the pure sweetness of honey.
+                  At Instant Honey Ginger, we believe that true energy comes from nature. Our journey started with a simple tradition: the healing power of ginger and the pure sweetness of honey. This combination has been a staple in Ghanaian households for generations, valued for its ability to soothe, energize, and protect.
                 </p>
                 <p className="text-lg text-foreground/70 leading-relaxed">
-                  We&apos;ve refined this age-old wisdom into a premium beverage that fits your modern lifestyle. Every bottle is a commitment to quality, health, and the vibrant spirit of Africa. No artificial colors, no preservatives—just pure, natural vitality.
+                  We&apos;ve refined this age-old wisdom into a premium beverage that fits your modern lifestyle. Every bottle is a commitment to quality, health, and the vibrant spirit of Africa. No artificial colors, no preservatives—just pure, natural vitality sourced from the best local farms and processed with the highest standards of excellence.
                 </p>
+                <p className="text-lg text-foreground/70 leading-relaxed">
+                  Our mission is to bring the authentic taste and health benefits of natural ginger and honey to your doorstep in Accra, Tema, and beyond. Whether you're a busy professional needing a natural pick-me-up or a family looking for a healthy alternative to sugary drinks, we are here to support your journey to better wellness.
+                </p>
+
+                <div className="pt-6">
+                  <Button asChild className="bg-brand-red hover:bg-brand-red/90 text-white rounded-full px-8 py-4 font-bold">
+                    <Link href="/benefits">Explore Health Benefits</Link>
+                  </Button>
+                </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 items-center border-t border-brand-blue/5">
                   <div className="space-y-2">
