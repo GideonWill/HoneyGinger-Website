@@ -20,7 +20,7 @@ const testimonials = [
     },
     {
         id: 3,
-        name: "John Doe",
+        name: "Kofi Asante",
         role: "Busy Professional",
         content: "Convenient and delicious. I keep a few sachets in my office desk. It's much better than coffee for a mid-day pick-me-up.",
         videoUrl: "#", // Placeholder

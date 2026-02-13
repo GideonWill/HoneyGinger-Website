@@ -108,7 +108,7 @@ export function Contact() {
                         type="text"
                         name="name"
                         required
-                        placeholder="John Doe"
+                        placeholder="Moussa Traoré"
                         className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-blue/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all"
                       />
                     </div>
@@ -118,7 +118,7 @@ export function Contact() {
                         type="email"
                         name="email"
                         required
-                        placeholder="john@example.com"
+                        placeholder="moussa@example.com"
                         className="w-full px-6 py-4 rounded-2xl bg-white border border-brand-blue/10 focus:outline-none focus:ring-2 focus:ring-brand-blue/20 transition-all"
                       />
                     </div>
