@@ -29,7 +29,7 @@ const socialItems = [
 
 export function SocialGallery() {
     return (
-        <section className="w-full bg-black">
+        <section className="w-full bg-black overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-3">
                 {socialItems.map((item, index) => (
                     <Link
