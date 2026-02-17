@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaTiktok } from "react-icons/fa";
@@ -61,6 +61,16 @@ export function Contact() {
                   <div>
                     <h4 className="text-lg font-bold text-brand-blue mb-1">Email Address</h4>
                     <a href="mailto:Joy4fame2020@gmail.com" className="text-foreground/70 hover:text-brand-blue transition-colors font-medium">Joy4fame2020@gmail.com</a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-6 group">
+                  <div className="w-12 h-12 bg-brand-blue/10 rounded-2xl flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
+                    <Globe size={24} />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-brand-blue mb-1">Website</h4>
+                    <a href="https://joy4famehoneygingerdrink.com" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-brand-blue transition-colors font-medium">joy4famehoneygingerdrink.com</a>
                   </div>
                 </div>
 

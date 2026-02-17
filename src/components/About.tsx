@@ -80,16 +80,16 @@ export function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {[
                 {
-                  title: "Quality & Efficiency (Mix)",
+                  title: "Official Advert (English)",
                   source: "/record1/J4FAME ENG MIX.mp3.mpeg",
                   bg: "/images/joy/15.jpeg",
-                  description: "Official English mix detailing our production quality."
+                  description: "Our official radio advertisement presented in English, detailing the quality and health benefits of our Instant Honey Ginger drink."
                 },
                 {
-                  title: "Ginger Wellness (Long)",
+                  title: "Official Advert (Twi)",
                   source: "/record1/J4FAME GINGER long.mp3.mpeg",
                   bg: "/images/joy/17.jpeg",
-                  description: "In-depth talk about the health benefits and pureness of our drink."
+                  description: "The Twi version of our official radio advertisement, making our message accessible to all our local customers in their preferred language."
                 }
               ].map((record, i) => (
                 <motion.div
